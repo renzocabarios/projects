@@ -1,6 +1,4 @@
 import model from "./model.js";
-import { RESOURCE } from "../../../constants/index.js";
-import admin from "./discriminators/admin.model.js";
 import { ClientSession } from "mongoose";
 import { IAddUserDto } from "../../../types/index.js";
 
@@ -9,9 +7,6 @@ async function getAll() {
 }
 
 async function add(_body: IAddUserDto, session: ClientSession) {
-  if (_body.type === RESOURCE.USERS.ADMIN) {
-    return await admin.create([_body], { session });
-  }
   return await model.create([_body], { session });
 }
 

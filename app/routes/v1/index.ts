@@ -2,7 +2,7 @@ import sampleRoute from "./sample/route";
 import usersRoute from "./users/route";
 import authRoute from "./auth/route";
 
-export const routes = [
+const routes = [
   {
     url: "sample",
     route: sampleRoute,
@@ -18,6 +18,6 @@ export const routes = [
 ];
 
 export const V1 = routes.map((e: any) => {
-  e.route = "v1/" + e.route;
+  e.url = "v1/" + e.url;
   return e;
 });

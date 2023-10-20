@@ -25,4 +25,4 @@ const schema = new Schema<IUserModel>(
   option
 );
 
-export default model(RESOURCE.USERS.DEFAULT, schema);
+export default model(RESOURCE.USERS, schema);
