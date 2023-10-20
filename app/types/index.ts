@@ -1,3 +1,9 @@
+export interface IDeckModel {
+  _id?: string;
+  name: string;
+  memories: IMemoryModel[];
+  deleted?: Boolean;
+}
 export interface IMemoryModel {
   _id?: string;
   front: string;
