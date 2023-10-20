@@ -1,23 +1,10 @@
-import V1 from "./v1";
+import { V1 } from "./v1";
 import { Express } from "express";
 
-export const routes = [
-  {
-    url: "/api/v1/sample",
-    route: V1.sampleRoute,
-  },
-  {
-    url: "/api/v1/users",
-    route: V1.usersRoute,
-  },
-  {
-    url: "/api/v1/auth",
-    route: V1.authRoute,
-  },
-];
+export const routes = [...V1];
 
 export const addRoutes = (app: Express) => {
   routes.forEach((route) => {
-    app.use(route.url, route.route);
+    app.use("/api/" + route.url, route.route);
   });
 };
