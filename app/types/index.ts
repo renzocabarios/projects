@@ -1,9 +1,14 @@
-import { RESOURCE } from "../constants";
-
+export interface IMemoryModel {
+  _id?: string;
+  front: string;
+  back: string;
+  due: Date;
+  deleted?: Boolean;
+}
 export interface IUserModel {
+  _id?: string;
   firstName: string;
   lastName: string;
-  __t?: string;
   deleted?: Boolean;
 }
 
